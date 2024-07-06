@@ -1,30 +1,46 @@
-# React + TypeScript + Vite
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.7.5/src/app/ci.min.css"
+/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Coffee Shop
 
-Currently, two official plugins are available:
+<b>
+    React + Vite + Ts + Mui 
+</b>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h2> Created by </h2>
+<b>Sina Zinsaz</b>
+<br />
 
-## Expanding the ESLint configuration
+<a href='https://www.linkedin.com/in/sina-zinsaz-a71061244/'>
+    <img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white' />
+</a>
+<a href='https://stackoverflow.com/users/20870363/sina-zinsaz'>
+    <img src='https://img.shields.io/badge/Stack_Overflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white' />
+</a>
+<a href='https://dev.to/sinazinsaz'>
+    <img src='https://img.shields.io/badge/dev.to-0A0A0A?style=for-the-badge&logo=devdotto&logoColor=white' />
+</a>
+<a href='https://github.com/SINAZZzz'>
+    <img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white' />
+</a>
+<a href='https://github.com/SINAZZzz](https://dribbble.com/SINAzz)'>
+    <img src='https://img.shields.io/badge/Dribbble-EA4C89?style=for-the-badge&logo=dribbble&logoColor=white' />
+</a>
+ <a href='https://www.youtube.com/@sinarage'>
+    <img src='https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white' />
+</a>
+  <a href='https://www.instagram.com/sina_rage/'>
+    <img src='https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white' />
+</a>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<h3> Ui/Ux </h3>
+<a href='https://www.figma.com/file/gs7MYXAQcNAfYW7xyoXcIV/Coffee-Shop-Mobile-App-Design-(Community)?type=design&mode=design&t=KeEgZ9O92Scycw0k-0'>
+    <img src='https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white' />
+</a>
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+<h3> run project </h3>
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+npm run dev
