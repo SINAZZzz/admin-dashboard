@@ -3,7 +3,7 @@
   href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.7.5/src/app/ci.min.css"
 />
 
-# Coffee Shop
+# Admin Dash
 
 <b>
     React + Vite + Ts + Mui 
