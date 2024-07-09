@@ -1,6 +1,5 @@
 import {
   Box,
-  Divider,
   Drawer,
   List,
   ListItem,
@@ -19,10 +18,20 @@ import {
   user,
 } from "../../constants/icons";
 
-const icons = [house, cartShopping, objectsColumn, chartSimple, user, lock];
+const icons = [house, cartShopping, chartSimple, objectsColumn, user, lock];
 const drawer = (
   <div>
-    <Toolbar />
+    <Toolbar
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontSize: "1.7rem",
+        fontWeight: "bold",
+      }}
+    >
+      Sina Zinsz
+    </Toolbar>
     <List>
       {[
         "Dashboard",
