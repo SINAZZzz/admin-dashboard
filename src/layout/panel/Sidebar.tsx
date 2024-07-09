@@ -9,13 +9,20 @@ import {
   ListItemText,
   Toolbar,
 } from "@mui/material";
-import { Inbox, Mail } from "@mui/icons-material";
 import { drawerWidth } from "../../constants/layout";
+import {
+  cartShopping,
+  chartSimple,
+  house,
+  lock,
+  objectsColumn,
+  user,
+} from "../../constants/icons";
 
+const icons = [house, cartShopping, objectsColumn, chartSimple, user, lock];
 const drawer = (
   <div>
     <Toolbar />
-    <Divider />
     <List>
       {[
         "Dashboard",
@@ -28,7 +35,11 @@ const drawer = (
         <ListItem key={text} disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              {index % 3 === 0 ? <Inbox /> : <Mail />}
+              <img
+                src={icons[index]}
+                alt={text}
+                style={{ width: 24, height: 24 }}
+              />
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItemButton>
