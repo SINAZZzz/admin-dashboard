@@ -17,24 +17,18 @@ const drawer = (
     <Toolbar />
     <Divider />
     <List>
-      {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+      {[
+        "Dashboard",
+        "NFT Marketplace",
+        "Tables",
+        "Kanban",
+        "Profile",
+        "Sign In",
+      ].map((text, index) => (
         <ListItem key={text} disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              {index % 2 === 0 ? <Inbox /> : <Mail />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItemButton>
-        </ListItem>
-      ))}
-    </List>
-    <Divider />
-    <List>
-      {["All mail", "Trash", "Spam"].map((text, index) => (
-        <ListItem key={text} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              {index % 2 === 0 ? <Inbox /> : <Mail />}
+              {index % 3 === 0 ? <Inbox /> : <Mail />}
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItemButton>
