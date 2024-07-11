@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Box,
   Drawer,
@@ -9,17 +10,22 @@ import {
   Toolbar,
 } from "@mui/material";
 import { drawerWidth } from "../../constants/layout";
-import {
-  cartShopping,
-  chartSimple,
-  house,
-  lock,
-  objectsColumn,
-  user,
-} from "../../constants/icons";
-import { useState } from "react";
 
-const icons = [house, cartShopping, chartSimple, objectsColumn, user, lock];
+import HomeIcon from "@mui/icons-material/Home";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
+import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
+import PersonIcon from "@mui/icons-material/Person";
+import LockIcon from "@mui/icons-material/Lock";
+
+const icons = [
+  HomeIcon,
+  ShoppingCartOutlinedIcon,
+  BarChartRoundedIcon,
+  ViewQuiltRoundedIcon,
+  PersonIcon,
+  LockIcon,
+];
 
 const Sidebar = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -61,15 +67,11 @@ const Sidebar = () => {
             >
               <ListItemIcon sx={{ minWidth: 35 }}>
                 <Box
-                  component="img"
-                  src={icons[index]}
-                  alt={text}
+                  component={icons[index]}
                   sx={{
-                    width: 20,
-                    height: 20,
-                    filter:
-                      "invert(53%) sepia(11%) saturate(488%) hue-rotate(181deg) brightness(94%) contrast(92%)",
-                    color: activeIndex === index ? "#fff" : "#A3AED0",
+                    width: 24,
+                    height: 24,
+                    color: activeIndex === index ? "#4318FF" : "#A3AED0",
                   }}
                 />
               </ListItemIcon>
