@@ -42,15 +42,22 @@ const drawer = (
         "Sign In",
       ].map((text, index) => (
         <ListItem key={text} disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <img
+          <ListItemButton sx={{ display: "flex", alignItems: "center" }}>
+            <ListItemIcon sx={{ minWidth: 35 }}>
+              <Box
+                component="img"
                 src={icons[index]}
                 alt={text}
-                style={{ width: 24, height: 24 }}
+                sx={{
+                  width: 20,
+                  height: 20,
+                  color: "#A3AED0",
+                  filter:
+                    "invert(53%) sepia(11%) saturate(488%) hue-rotate(181deg) brightness(94%) contrast(92%)",
+                }}
               />
             </ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemText primary={text} sx={{ color: "#A3AED0" }} />
           </ListItemButton>
         </ListItem>
       ))}
