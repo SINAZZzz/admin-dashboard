@@ -1,8 +1,15 @@
-import cartShopping from "../assets/icons/cart-shopping.svg";
-import chartSimple from "../assets/icons/chart-simple.svg";
-import house from "../assets/icons/house.svg";
-import lock from "../assets/icons/lock-keyhole.svg";
-import objectsColumn from "../assets/icons/objects-column.svg";
-import user from "../assets/icons/user.svg";
+import HomeIcon from "@mui/icons-material/Home";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
+import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
+import PersonIcon from "@mui/icons-material/Person";
+import LockIcon from "@mui/icons-material/Lock";
 
-export { cartShopping, chartSimple, house, lock, objectsColumn, user };
+export {
+  BarChartRoundedIcon,
+  HomeIcon,
+  LockIcon,
+  PersonIcon,
+  ShoppingCartOutlinedIcon,
+  ViewQuiltRoundedIcon,
+};

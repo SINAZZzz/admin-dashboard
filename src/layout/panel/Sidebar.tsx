@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { drawerWidth } from "../../constants/layout";
 import {
   Box,
   Drawer,
@@ -9,14 +10,14 @@ import {
   ListItemText,
   Toolbar,
 } from "@mui/material";
-import { drawerWidth } from "../../constants/layout";
-
-import HomeIcon from "@mui/icons-material/Home";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
-import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
-import PersonIcon from "@mui/icons-material/Person";
-import LockIcon from "@mui/icons-material/Lock";
+import {
+  BarChartRoundedIcon,
+  HomeIcon,
+  LockIcon,
+  PersonIcon,
+  ShoppingCartOutlinedIcon,
+  ViewQuiltRoundedIcon,
+} from "../../constants/icons";
 
 const icons = [
   HomeIcon,
