@@ -31,6 +31,7 @@ export default function DrawerSidebar() {
   const handleListItemClick = (index: number) => {
     setActiveIndex(index);
   };
+
   return (
     <div>
       <Toolbar
@@ -59,6 +60,19 @@ export default function DrawerSidebar() {
               sx={{
                 "&:hover": {
                   backgroundColor: "inherit",
+                },
+                position: "relative",
+                "&::after": {
+                  content: '""',
+                  position: "absolute",
+                  right: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: 4,
+                  height: "100%",
+                  borderRadius: "5px",
+                  backgroundColor:
+                    activeIndex === index ? "#4318FF" : "transparent",
                 },
               }}
             >
