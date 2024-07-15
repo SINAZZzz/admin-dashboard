@@ -1,6 +1,5 @@
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, Toolbar } from "@mui/material";
 import { drawerWidth } from "../../constants/layout";
-import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Header() {
   return (
@@ -8,22 +7,13 @@ export default function Header() {
       position="fixed"
       sx={{
         width: { sm: `calc(100% - ${drawerWidth}px)` },
+        height: "15%",
         ml: { sm: `${drawerWidth}px` },
+        bgcolor: "#F4F7FE",
+        boxShadow: "none",
       }}
     >
-      <Toolbar>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          edge="start"
-          sx={{ mr: 2, display: { sm: "none" } }}
-        >
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" noWrap component="div">
-          Responsive drawer
-        </Typography>
-      </Toolbar>
+      <Toolbar></Toolbar>
     </AppBar>
   );
 }
