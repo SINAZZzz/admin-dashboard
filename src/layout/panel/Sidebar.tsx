@@ -1,14 +1,5 @@
 import { drawerWidth } from "../../constants/layout";
-import {
-  Box,
-  Drawer,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Toolbar,
-} from "@mui/material";
+import { Box, Drawer } from "@mui/material";
 import DrawerSidebar from "../../components/DrawerSidebar";
 
 const Sidebar = () => {

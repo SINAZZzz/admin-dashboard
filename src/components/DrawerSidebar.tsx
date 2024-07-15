@@ -18,7 +18,7 @@ import {
 } from "../constants/icons";
 
 export default function DrawerSidebar() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>();
   const icons = [
     HomeIcon,
     ShoppingCartOutlinedIcon,
