@@ -7,15 +7,17 @@ import { Outlet } from "react-router-dom";
 
 export default function PanelLayout() {
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box display="flex" mx="-0.5rem">
       <Header />
       <Sidebar />
       <Box
         component="main"
         sx={{
           flexGrow: 1,
-          p: 3,
+          py: 6,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
+          bgcolor: "blue",
+          color: "white",
         }}
       >
         <Toolbar />
