@@ -1,13 +1,13 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import PanelLayout from "./layout/panel";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import AppRoutes from "./routes";
 
 const queryClient = new QueryClient();
 
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <PanelLayout />
+      <AppRoutes />
       <ReactQueryDevtools
         initialIsOpen={false}
         position="left"

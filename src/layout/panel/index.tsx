@@ -16,8 +16,8 @@ export default function PanelLayout() {
           flexGrow: 1,
           py: 6,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          bgcolor: "blue",
-          color: "white",
+          bgcolor: "#F4F7FE",
+          height: "100vh",
         }}
       >
         <Toolbar />

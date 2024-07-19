@@ -8,6 +8,7 @@ import {
   ListItemText,
   Toolbar,
 } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 import {
   BarChartRoundedIcon,
   HomeIcon,
@@ -26,6 +27,14 @@ export default function DrawerSidebar() {
     ViewQuiltRoundedIcon,
     PersonIcon,
     LockIcon,
+  ];
+  const links = [
+    "/",
+    "/nft-marketplace",
+    "/tables",
+    "/kanban",
+    "/profile",
+    "/sign-in",
   ];
 
   const handleListItemClick = (index: number) => {
@@ -56,6 +65,8 @@ export default function DrawerSidebar() {
         ].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton
+              component={RouterLink}
+              to={links[index]}
               onClick={() => handleListItemClick(index)}
               sx={{
                 "&:hover": {
