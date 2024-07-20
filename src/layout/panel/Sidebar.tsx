@@ -16,6 +16,7 @@ const Sidebar = () => {
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             width: drawerWidth,
+            border: "none",
           },
         }}
         open
