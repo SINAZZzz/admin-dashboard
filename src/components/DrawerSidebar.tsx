@@ -77,10 +77,10 @@ export default function DrawerSidebar() {
                   content: '""',
                   position: "absolute",
                   right: 0,
-                  top: 0,
+                  top: 5,
                   bottom: 0,
                   width: 4,
-                  height: "100%",
+                  height: "calc(100% - 10px)",
                   borderRadius: "5px",
                   backgroundColor:
                     activeIndex === index ? "#4318FF" : "transparent",
