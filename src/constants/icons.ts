@@ -5,11 +5,11 @@ import ViewQuiltRoundedIcon from "@mui/icons-material/ViewQuiltRounded";
 import PersonIcon from "@mui/icons-material/Person";
 import LockIcon from "@mui/icons-material/Lock";
 
-export {
-  BarChartRoundedIcon,
+export const icons = [
   HomeIcon,
-  LockIcon,
-  PersonIcon,
   ShoppingCartOutlinedIcon,
+  BarChartRoundedIcon,
   ViewQuiltRoundedIcon,
-};
+  PersonIcon,
+  LockIcon,
+];

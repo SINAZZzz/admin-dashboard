@@ -9,33 +9,11 @@ import {
   Toolbar,
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-import {
-  BarChartRoundedIcon,
-  HomeIcon,
-  LockIcon,
-  PersonIcon,
-  ShoppingCartOutlinedIcon,
-  ViewQuiltRoundedIcon,
-} from "../constants/icons";
+import { links } from "../constants/links";
+import { icons } from "../constants/icons";
 
 export default function DrawerSidebar() {
   const [activeIndex, setActiveIndex] = useState<number | null>();
-  const icons = [
-    HomeIcon,
-    ShoppingCartOutlinedIcon,
-    BarChartRoundedIcon,
-    ViewQuiltRoundedIcon,
-    PersonIcon,
-    LockIcon,
-  ];
-  const links = [
-    "/",
-    "/nft-marketplace",
-    "/tables",
-    "/kanban",
-    "/profile",
-    "/sign-in",
-  ];
 
   const handleListItemClick = (index: number) => {
     setActiveIndex(index);
