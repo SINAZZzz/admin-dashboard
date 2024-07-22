@@ -1,11 +1,19 @@
+import { useDispatch } from "react-redux";
 import { Box, InputAdornment, TextField } from "@mui/material";
 import profile from "../assets/img/profile.jpg";
 import ErrorOutlineRoundedIcon from "@mui/icons-material/ErrorOutlineRounded";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
 import SearchIcon from "@mui/icons-material/Search";
+import { toggleTheme } from "../store/themeSlice";
 
 export default function ElementsHeader() {
+  const dispatch = useDispatch();
+
+  const handleToggleTheme = () => {
+    dispatch(toggleTheme());
+  };
+
   return (
     <Box
       sx={{
@@ -68,6 +76,7 @@ export default function ElementsHeader() {
               mx: "1rem",
               cursor: "pointer",
             }}
+            onClick={handleToggleTheme}
           />
           <ErrorOutlineRoundedIcon
             sx={{
