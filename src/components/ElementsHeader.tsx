@@ -58,12 +58,24 @@ export default function ElementsHeader() {
           />
         </Box>
         <Box display="flex" justifyContent="space-between" alignItems="center">
-          <NotificationsNoneRoundedIcon sx={{ color: "#A3AED0" }} />
+          <NotificationsNoneRoundedIcon
+            sx={{ color: "#A3AED0", cursor: "pointer" }}
+          />
           <NightlightIcon
-            sx={{ color: "#A3AED0", transform: "rotate(-20deg)", mx: "1rem" }}
+            sx={{
+              color: "#A3AED0",
+              transform: "rotate(-20deg)",
+              mx: "1rem",
+              cursor: "pointer",
+            }}
           />
           <ErrorOutlineRoundedIcon
-            sx={{ color: "#A3AED0", transform: "rotate(180deg)", mr: "1rem" }}
+            sx={{
+              color: "#A3AED0",
+              transform: "rotate(180deg)",
+              mr: "1rem",
+              cursor: "pointer",
+            }}
           />
           <Box
             component="img"
