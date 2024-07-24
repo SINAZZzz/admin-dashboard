@@ -31,7 +31,7 @@ export default function ElementsHeader() {
         </Box>
       </Box>
       <Box
-        bgcolor="#FFFFFF"
+        bgcolor="background.paper"
         display="flex"
         alignItems="center"
         borderRadius="5rem"
@@ -42,7 +42,7 @@ export default function ElementsHeader() {
             placeholder="Search"
             variant="outlined"
             sx={{
-              bgcolor: "#F4F7FE",
+              bgcolor: "background.default",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -59,7 +59,7 @@ export default function ElementsHeader() {
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start" sx={{}}>
-                  <SearchIcon sx={{ color: "black" }} />
+                  <SearchIcon />
                 </InputAdornment>
               ),
             }}
