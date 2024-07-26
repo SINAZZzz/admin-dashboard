@@ -24,7 +24,7 @@ const useAppBarStyles = () => {
       flexDirection: "column",
       justifyContent: "flex-end",
     }),
-    []s
+    []
   );
 
   return { appBarStyle, appBarSx };
