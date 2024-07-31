@@ -1,14 +1,17 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Box, InputAdornment, TextField } from "@mui/material";
 import profile from "../assets/img/profile.jpg";
 import ErrorOutlineRoundedIcon from "@mui/icons-material/ErrorOutlineRounded";
 import NightlightIcon from "@mui/icons-material/Nightlight";
+import LightModeIcon from "@mui/icons-material/LightMode";
 import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
 import SearchIcon from "@mui/icons-material/Search";
 import { toggleTheme } from "../store/themeSlice";
+import { RootState, AppDispatch } from "../store";
 
 export default function ElementsHeader() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
+  const isDarkMode = useSelector((state: RootState) => state.theme.darkMode);
 
   const handleToggleTheme = () => {
     dispatch(toggleTheme());
@@ -69,15 +72,27 @@ export default function ElementsHeader() {
           <NotificationsNoneRoundedIcon
             sx={{ color: "#A3AED0", cursor: "pointer" }}
           />
-          <NightlightIcon
-            sx={{
-              color: "#A3AED0",
-              transform: "rotate(-20deg)",
-              mx: "1rem",
-              cursor: "pointer",
-            }}
-            onClick={handleToggleTheme}
-          />
+          {isDarkMode ? (
+            <LightModeIcon
+              sx={{
+                color: "#A3AED0",
+                transform: "rotate(-20deg)",
+                mx: "1rem",
+                cursor: "pointer",
+              }}
+              onClick={handleToggleTheme}
+            />
+          ) : (
+            <NightlightIcon
+              sx={{
+                color: "#A3AED0",
+                transform: "rotate(-20deg)",
+                mx: "1rem",
+                cursor: "pointer",
+              }}
+              onClick={handleToggleTheme}
+            />
+          )}
           <ErrorOutlineRoundedIcon
             sx={{
               color: "#A3AED0",
