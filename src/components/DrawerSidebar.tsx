@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Box,
+  Divider,
   List,
   ListItem,
   ListItemButton,
@@ -11,9 +12,12 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import { links } from "../constants/links";
 import { icons } from "../constants/icons";
+import { useSelector } from "react-redux";
+import { RootState } from "../store";
 
 export default function DrawerSidebar() {
   const [activeIndex, setActiveIndex] = useState<number | null>();
+  const isDarkMode = useSelector((state: RootState) => state.theme.darkMode);
 
   const handleListItemClick = (index: number) => {
     setActiveIndex(index);
@@ -28,11 +32,13 @@ export default function DrawerSidebar() {
           alignItems: "center",
           fontSize: "1.7rem",
           fontWeight: "bold",
+          my:'1rem'
         }}
       >
         Sina Zinsz
       </Toolbar>
-      <List sx={{}}>
+      <Divider sx={{mb:'1rem'}} />
+      <List>
         {[
           "Dashboard",
           "NFT Marketplace",
@@ -71,13 +77,13 @@ export default function DrawerSidebar() {
                   sx={{
                     width: 24,
                     height: 24,
-                    color: activeIndex === index ? "#4318FF" : "#A3AED0",
+                    color: !isDarkMode ? activeIndex === index ? "#4318FF" : "#A3AED0" : activeIndex === index ? "#fff" : "#A3AED0",
                   }}
                 />
               </ListItemIcon>
               <ListItemText
                 primary={text}
-                sx={{ color: activeIndex === index ? "#000" : "#A3AED0" }}
+                sx={{ color: !isDarkMode ? activeIndex === index ? "#000" : "#A3AED0" : activeIndex === index ? "#fff" : "#A3AED0" }}
               />
             </ListItemButton>
           </ListItem>
