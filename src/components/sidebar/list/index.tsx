@@ -9,13 +9,12 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import { links } from "../../../constants/links";
 import { icons } from "../../../constants/icons";
-import { useSelector } from "react-redux";
 import { useState } from "react";
-import { RootState } from "../../../store";
+import useAppBarStyles from "../../../constants/styles";
 
 export default function ListSidebar() {
   const [activeIndex, setActiveIndex] = useState<number | null>();
-  const isDarkMode = useSelector((state: RootState) => state.theme.darkMode);
+  const { isDarkMode } = useAppBarStyles();
 
   const handleListItemClick = (index: number) => {
     setActiveIndex(index);
