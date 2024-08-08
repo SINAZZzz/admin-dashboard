@@ -7,13 +7,13 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Toolbar,
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { links } from "../constants/links";
 import { icons } from "../constants/icons";
 import { useSelector } from "react-redux";
 import { RootState } from "../store";
+import Title from "./header/Title";
 
 export default function DrawerSidebar() {
   const [activeIndex, setActiveIndex] = useState<number | null>();
@@ -25,19 +25,9 @@ export default function DrawerSidebar() {
 
   return (
     <div>
-      <Toolbar
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          fontSize: "1.7rem",
-          fontWeight: "bold",
-          my:'1rem'
-        }}
-      >
-        Sina Zinsz
-      </Toolbar>
-      <Divider sx={{mb:'1rem'}} />
+      {/* title */}
+      <Title />
+      <Divider sx={{ mb: "1rem" }} />
       <List>
         {[
           "Dashboard",
@@ -77,13 +67,27 @@ export default function DrawerSidebar() {
                   sx={{
                     width: 24,
                     height: 24,
-                    color: !isDarkMode ? activeIndex === index ? "#4318FF" : "#A3AED0" : activeIndex === index ? "#fff" : "#A3AED0",
+                    color: !isDarkMode
+                      ? activeIndex === index
+                        ? "#4318FF"
+                        : "#A3AED0"
+                      : activeIndex === index
+                      ? "#fff"
+                      : "#A3AED0",
                   }}
                 />
               </ListItemIcon>
               <ListItemText
                 primary={text}
-                sx={{ color: !isDarkMode ? activeIndex === index ? "#000" : "#A3AED0" : activeIndex === index ? "#fff" : "#A3AED0" }}
+                sx={{
+                  color: !isDarkMode
+                    ? activeIndex === index
+                      ? "#000"
+                      : "#A3AED0"
+                    : activeIndex === index
+                    ? "#fff"
+                    : "#A3AED0",
+                }}
               />
             </ListItemButton>
           </ListItem>
