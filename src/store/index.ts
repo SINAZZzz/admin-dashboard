@@ -4,6 +4,7 @@ import themeReducer from "./themeSlice";
 const store = configureStore({
   reducer: {
     theme: themeReducer,
+    pageName: pageNameReducer
   },
 });
 
