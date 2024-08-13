@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import themeReducer from "./themeSlice";
+import pageReducer from './pageSlice';
 
 const store = configureStore({
   reducer: {
     theme: themeReducer,
-    pageName: pageNameReducer
+    page: pageReducer
   },
 });
 

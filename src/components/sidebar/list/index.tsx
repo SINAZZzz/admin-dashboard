@@ -7,17 +7,21 @@ import {
   ListItemText,
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { links } from "../../../constants/links";
 import { icons } from "../../../constants/icons";
 import { useState } from "react";
 import useAppBarStyles from "../../../constants/styles";
+import { setPageTitle } from "../../../store/pageSlice";
 
 export default function ListSidebar() {
-  const [activeIndex, setActiveIndex] = useState<number | null>();
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { isDarkMode } = useAppBarStyles();
+  const dispatch = useDispatch();
 
-  const handleListItemClick = (index: number) => {
+  const handleListItemClick = (index: number, text: string) => {
     setActiveIndex(index);
+    dispatch(setPageTitle(text));
   };
 
   return (
@@ -34,7 +38,7 @@ export default function ListSidebar() {
           <ListItemButton
             component={RouterLink}
             to={links[index]}
-            onClick={() => handleListItemClick(index)}
+            onClick={() => handleListItemClick(index, text)}
             sx={{
               "&:hover": {
                 backgroundColor: "inherit",
