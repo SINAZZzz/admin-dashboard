@@ -15,13 +15,32 @@ import useAppBarStyles from "../../../constants/styles";
 import { setPageTitle } from "../../../store/pageSlice";
 
 export default function ListSidebar() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const savedIndex = localStorage.getItem("activeIndex");
+  const initialIndex = savedIndex !== null ? Number(savedIndex) : null;
+  const [activeIndex, setActiveIndex] = useState<number | null>(initialIndex);
+
   const { isDarkMode } = useAppBarStyles();
   const dispatch = useDispatch();
+
+  if (initialIndex !== null) {
+    dispatch(
+      setPageTitle(
+        [
+          "Dashboard",
+          "NFT Marketplace",
+          "Tables",
+          "Kanban",
+          "Profile",
+          "Sign In",
+        ][initialIndex]
+      )
+    );
+  }
 
   const handleListItemClick = (index: number, text: string) => {
     setActiveIndex(index);
     dispatch(setPageTitle(text));
+    localStorage.setItem("activeIndex", index.toString());
   };
 
   return (
