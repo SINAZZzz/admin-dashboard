@@ -20,6 +20,7 @@ export default function ButtonHead() {
     const title = "Sign In";
     dispatch(setPageTitle(title));
     localStorage.setItem("pageTitle", title);
+    localStorage.setItem("activeIndex", "5");
     navigate("sign-in");
   };
 
@@ -68,6 +69,7 @@ export default function ButtonHead() {
           borderRadius: "50%",
           width: "2.5rem",
           height: "2.5rem",
+          cursor: "pointer",
         }}
         onClick={handleProfileClick}
       />
