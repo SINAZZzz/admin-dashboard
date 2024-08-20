@@ -2,10 +2,12 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export  interface PageState {
   pageTitle: string;
+  activeIndex: number | null;
 }
 
 const initialState: PageState = {
   pageTitle: 'Dashboard',
+  activeIndex: 0,
 };
 
 const pageSlice = createSlice({
@@ -15,9 +17,12 @@ const pageSlice = createSlice({
     setPageTitle: (state, action: PayloadAction<string>) => {
       state.pageTitle = action.payload;
     },
+     setActiveIndex(state, action: PayloadAction<number | null>) {
+      state.activeIndex = action.payload;
+    },
   },
 });
 
-export const { setPageTitle } = pageSlice.actions;
+export const { setPageTitle , setActiveIndex  } = pageSlice.actions;
 
 export default pageSlice.reducer;

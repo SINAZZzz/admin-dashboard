@@ -10,14 +10,13 @@ import { Link as RouterLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { links } from "../../../constants/links";
 import { icons } from "../../../constants/icons";
-import { useState } from "react";
 import useAppBarStyles from "../../../constants/styles";
-import { setPageTitle } from "../../../store/pageSlice";
+import { setActiveIndex, setPageTitle } from "../../../store/pageSlice";
 
 export default function ListSidebar() {
   const savedIndex = localStorage.getItem("activeIndex");
   const initialIndex = savedIndex !== null ? Number(savedIndex) : null;
-  const [activeIndex, setActiveIndex] = useState<number | null>(initialIndex);
+  const active = Number(localStorage.getItem("activeIndex"));
 
   const { isDarkMode } = useAppBarStyles();
   const dispatch = useDispatch();
@@ -38,7 +37,7 @@ export default function ListSidebar() {
   }
 
   const handleListItemClick = (index: number, text: string) => {
-    setActiveIndex(index);
+    dispatch(setActiveIndex(index));
     dispatch(setPageTitle(text));
     localStorage.setItem("activeIndex", index.toString());
   };
@@ -72,8 +71,7 @@ export default function ListSidebar() {
                 width: 4,
                 height: "calc(100% - 10px)",
                 borderRadius: "5px",
-                backgroundColor:
-                  activeIndex === index ? "#4318FF" : "transparent",
+                backgroundColor: active === index ? "#4318FF" : "transparent",
               },
             }}
           >
@@ -84,10 +82,10 @@ export default function ListSidebar() {
                   width: 24,
                   height: 24,
                   color: !isDarkMode
-                    ? activeIndex === index
+                    ? active === index
                       ? "#4318FF"
                       : "#A3AED0"
-                    : activeIndex === index
+                    : active === index
                     ? "#fff"
                     : "#A3AED0",
                 }}
@@ -97,10 +95,10 @@ export default function ListSidebar() {
               primary={text}
               sx={{
                 color: !isDarkMode
-                  ? activeIndex === index
+                  ? active === index
                     ? "#000"
                     : "#A3AED0"
-                  : activeIndex === index
+                  : active === index
                   ? "#fff"
                   : "#A3AED0",
               }}

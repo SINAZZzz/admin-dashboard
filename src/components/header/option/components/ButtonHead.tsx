@@ -8,14 +8,25 @@ import { AppDispatch } from "../../../../store";
 import { useDispatch } from "react-redux";
 import useAppBarStyles from "../../../../constants/styles";
 import Profile from "../../../../assets/img/profile.jpg";
+import { useNavigate } from "react-router-dom";
+import { setPageTitle } from "../../../../store/pageSlice";
 
 export default function ButtonHead() {
   const { isDarkMode } = useAppBarStyles();
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    const title = "Sign In";
+    dispatch(setPageTitle(title));
+    localStorage.setItem("pageTitle", title);
+    navigate("sign-in");
+  };
 
   const handleToggleTheme = () => {
     dispatch(toggleTheme());
   };
+
   return (
     <Box display="flex" justifyContent="space-between" alignItems="center">
       <NotificationsNoneRoundedIcon
@@ -58,6 +69,7 @@ export default function ButtonHead() {
           width: "2.5rem",
           height: "2.5rem",
         }}
+        onClick={handleProfileClick}
       />
     </Box>
   );
