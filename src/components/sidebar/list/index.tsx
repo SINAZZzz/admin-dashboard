@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   Box,
   List,
@@ -14,14 +15,15 @@ import useAppBarStyles from "../../../constants/styles";
 import { setActiveIndex, setPageTitle } from "../../../store/pageSlice";
 
 export default function ListSidebar() {
-  const savedIndex = localStorage.getItem("activeIndex");
-  const initialIndex = savedIndex !== null ? Number(savedIndex) : null;
-  const active = Number(localStorage.getItem("activeIndex"));
-
-  const { isDarkMode } = useAppBarStyles();
   const dispatch = useDispatch();
+  const { isDarkMode } = useAppBarStyles();
 
-  if (initialIndex !== null) {
+  const [active, setActive] = useState(() => {
+    const savedIndex = localStorage.getItem("activeIndex");
+    return savedIndex !== null ? Number(savedIndex) : 0;
+  });
+
+  useEffect(() => {
     dispatch(
       setPageTitle(
         [
@@ -31,12 +33,13 @@ export default function ListSidebar() {
           "Kanban",
           "Profile",
           "Sign In",
-        ][initialIndex]
+        ][active]
       )
     );
-  }
+  }, [active, dispatch]);
 
   const handleListItemClick = (index: number, text: string) => {
+    setActive(index);
     dispatch(setActiveIndex(index));
     dispatch(setPageTitle(text));
     localStorage.setItem("activeIndex", index.toString());
