@@ -6,7 +6,7 @@ export  interface PageState {
 }
 
 const initialState: PageState = {
-  pageTitle: 'Dashboard',
+  pageTitle: '',
   activeIndex: 0,
 };
 
