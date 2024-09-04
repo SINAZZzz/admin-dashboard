@@ -4,17 +4,17 @@ import NightlightIcon from "@mui/icons-material/Nightlight";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
 import { toggleTheme } from "../../../../store/themeSlice";
-import { AppDispatch } from "../../../../store";
-import { useDispatch } from "react-redux";
-import useAppBarStyles from "../../../../constants/styles";
+import { AppDispatch, RootState } from "../../../../store";
+import { useDispatch, useSelector } from "react-redux";
 import Profile from "../../../../assets/img/profile.jpg";
 import { useNavigate } from "react-router-dom";
 import { setPageTitle } from "../../../../store/pageSlice";
 
 export default function ButtonHead() {
-  const { isDarkMode } = useAppBarStyles();
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+
+  const isDarkMode = useSelector((state: RootState) => state.theme.darkMode);
 
   const handleProfileClick = () => {
     const title = "Sign In";

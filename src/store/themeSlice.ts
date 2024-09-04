@@ -4,8 +4,13 @@ interface ThemeState {
   darkMode: boolean;
 }
 
+const getInitialTheme = (): boolean => {
+  const savedTheme = localStorage.getItem("darkMode");
+  return savedTheme !== null ? JSON.parse(savedTheme) : true; 
+};
+
 const initialState: ThemeState = {
-  darkMode: true,
+  darkMode: getInitialTheme(),
 };
 
 const themeSlice = createSlice({
@@ -14,6 +19,7 @@ const themeSlice = createSlice({
   reducers: {
     toggleTheme(state) {
       state.darkMode = !state.darkMode;
+      localStorage.setItem("darkMode", JSON.stringify(state.darkMode));
     },
   },
 });
